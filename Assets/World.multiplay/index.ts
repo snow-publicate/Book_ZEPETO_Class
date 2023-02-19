@@ -1,5 +1,4 @@
 import { Sandbox, SandboxOptions, SandboxPlayer } from "ZEPETO.Multiplay";
-import { DataStorage } from "ZEPETO.Multiplay.DataStorage";
 import { Player, Transform, Vector3 } from "ZEPETO.Multiplay.Schema";
 
 export default class extends Sandbox {
@@ -46,16 +45,6 @@ export default class extends Sandbox {
         {
             player.zepetoUserId = client.userId;
         }
-
-        const storage: DataStorage = client.loadDataStorage!();
-
-        let visit_cnt = await storage.get("VisitCount") as number;
-
-        if(visit_cnt == null) visit_cnt = 0;
-
-        console.log(`[OnJoin] ${client.sessionId}'s visiting count : ${visit_cnt}`);
-
-        await storage.set("VisitCount", ++visit_cnt);
 
         this.state.players.set(client.sessionId, player);
     }

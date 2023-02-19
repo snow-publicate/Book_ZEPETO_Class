@@ -11,21 +11,22 @@ export default class ClientStarter extends ZepetoScriptBehaviour {
     private room : Room;
     
     private currentPlayers: Map<string, Player> = new Map<string, Player>();
+
     Start() 
     {    
         this.multiplay.RoomCreated += (room:Room) => {
             this.room = room;
-        }
+        };
 
         this.multiplay.RoomJoined += (room:Room) => {
             room.OnStateChange += this.OnStateChange;
-        }
+        };
 
         //월드 로직 작성 2번 강의
         this.StartCoroutine(this.SendMessageLoop(0.1));
     }
 
-        //월드 로직 작성 2번 강의
+        //월드 로직 작성 2번 강의 (코루틴)
     private * SendMessageLoop(tick: number) 
     {
         while (true) 
@@ -64,7 +65,7 @@ export default class ClientStarter extends ZepetoScriptBehaviour {
         rot.Add("z", transform.localEulerAngles.z);
         data.Add("rotation", rot.GetObject());
 
-        this.room.Send("onChangeTransform", data.GetObject());
+        this.room.Send("onChangedTransform", data.GetObject());
     }
 
     private OnStateChange(state: State, isFirst: boolean)
@@ -85,7 +86,7 @@ export default class ClientStarter extends ZepetoScriptBehaviour {
                 {
                     const player: Player = this.currentPlayers.get(sessionId);
 
-                    player.OnChange += (ChangeValues) => this.OnUpdatePlayer(sessionId, player);
+                    player.OnChange += (ChangeValues) => this.OnUpdatePlayer(sessionId, player); //수정필요할 듯
                 }
             })
 
@@ -140,7 +141,7 @@ export default class ClientStarter extends ZepetoScriptBehaviour {
     {
         const data = new RoomData();
         data.Add("state", state);
-        this.room.Send("onChange", data.GetObject());
+        this.room.Send("onChangedState", data.GetObject());
     }
 
     private OnJoinPlayer(sessionId: string, player: Player): void {
