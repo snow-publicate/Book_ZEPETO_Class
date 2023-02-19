@@ -11,6 +11,7 @@
 			}
 		],
 		"types": [
+			"./Assets/World.multiplay/SchemaTypes",
 			"./Library/PackageCache/zepeto.world@1.11.1",
 			"./Library/PackageCache/zepeto.world@1.11.1/typings/InputSystem",
 			"./Library/PackageCache/zepeto.world@1.11.1/typings/PostProcessing/Editor",
