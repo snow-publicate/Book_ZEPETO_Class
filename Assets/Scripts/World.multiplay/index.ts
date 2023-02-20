@@ -31,27 +31,20 @@ export default class extends Sandbox { //ZEPETO가 제공하는 핵심 클래스
 
             player!.transform = transform; 
         })        
-
     }
 
     // 클라이언트가 서버로 접속하면, 새로운 Player를 생성하여 player변수에 할당,
     // 해당 player변수에 sessionId, hashCode, userId 정보를 모두 할당. 
     // 이렇게 완성된 player변수는 서버의 state.players에 할당.
-    async onJoin(client: SandboxPlayer) { //클라이언트가 접속될 때 동작하는 코드
+    onJoin(client: SandboxPlayer) { //클라이언트가 접속될 때 동작하는 코드
         // console.log("어떤 클라이언트가 접속하였습니다."); <= 필요가 없으므로 주석처리
         const player = new Player();
         
         player.sessionId = client.sessionId;
 
-        if (client.hashCode)
-        {
-            player.zepetoHash = client.hashCode;
-        }
+        if (client.hashCode) player.zepetoHash = client.hashCode;
 
-        if (client.userId) 
-        {
-            player.zepetoUserId = client.userId;
-        }
+        if (client.userId) player.zepetoUserId = client.userId;
 
         this.state.players.set(client.sessionId, player);
     }
