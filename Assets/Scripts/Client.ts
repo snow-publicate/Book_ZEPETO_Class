@@ -5,7 +5,7 @@ import { Player, State, Vector3 } from 'ZEPETO.Multiplay.Schema';
 import * as UnityEngine from 'UnityEngine'
 import { CharacterState, SpawnInfo, ZepetoPlayer, ZepetoPlayers } from 'ZEPETO.Character.Controller';
 
-export default class ClientStarter extends ZepetoScriptBehaviour {
+export default class Client extends ZepetoScriptBehaviour {
 
     public multiplay : ZepetoWorldMultiplay;
     private room : Room;
