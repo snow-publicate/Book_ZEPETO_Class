@@ -438,7 +438,7 @@ MonoBehaviour:
     height: 1.2
     walkSpeed: 2
     runSpeed: 5
-    jumpPower: 5
+    jumpPower: 10
     layer:
       serializedVersion: 2
       m_Bits: 0
