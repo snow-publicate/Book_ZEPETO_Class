@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: WORLDMAP(MERCATOR)-2021(KOR)A1
-    second: {fileID: 2800000, guid: 4e11d6fbb366738449b806a4bdea504a, type: 3}
+    second: {fileID: 2800000, guid: b2198c16412b0c940ae167e4d7b77a42, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
