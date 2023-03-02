@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ZEPETO-Class-Multi-WorldMap.unity
     guid: c371f3d62f641514787765c03de077a0
+  - enabled: 1
+    path: Assets/Scenes/ZEPETO-Class-Multi-WorldMap2.unity
+    guid: 16700f35729e3e14096907e7c68b8f3e
   m_configObjects: {}
