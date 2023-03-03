@@ -11,12 +11,12 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: kid_boy_AlbedoTransparency
-    second: {fileID: 2800000, guid: eb7856c6a96cd9a40a4ccaa2153b1480, type: 3}
+    second: {fileID: 2800000, guid: 7f7d3e2ceb911be489459b4a759838fc, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: kid_boy_Normal
-    second: {fileID: 2800000, guid: b9643dd086bcb4a48bce2e01307cfb19, type: 3}
+    second: {fileID: 2800000, guid: 2839146b3c9707446a8515078164069b, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
